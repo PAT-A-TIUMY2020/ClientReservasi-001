@@ -448,5 +448,10 @@ namespace ClientReservasi_001.ServiceReference1 {
             ClientReservasi_001.ServiceReference1.PemesananRequest inValue = new ClientReservasi_001.ServiceReference1.PemesananRequest();
             return ((ClientReservasi_001.ServiceReference1.IService1)(this)).Pemesanan1Async(inValue);
         }
+
+        internal string Login(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

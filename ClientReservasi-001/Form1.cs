@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ClientReservasi_001
 {
-    public partial class Form1 : Form
+    public partial class Reservasi : Form
     {
         ServiceReference1.Service1Client service = new ServiceReference1.Service1Client();
-        public Form1()
+        public Reservasi()
         {
             InitializeComponent();
 
@@ -22,7 +22,7 @@ namespace ClientReservasi_001
             btHapus.Enabled = false;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Reservasi_Load(object sender, EventArgs e)
         {
 
         }
@@ -48,7 +48,7 @@ namespace ClientReservasi_001
             string NoTelpon = textBoxNoTlf.Text;
 
             var a = service.editPemesanan(IDPemesanan, NamaCustomer, NoTelpon);
-            MessageBox.Show(a.ToString());
+            MessageBox.Show(a);
             TampilData();
             Clear();
         }
@@ -65,7 +65,6 @@ namespace ClientReservasi_001
 
         public void TampilData()
         {
-
             var List = service.Pemesanan1();
             dtPemesanan.DataSource = List;
         }
@@ -79,8 +78,11 @@ namespace ClientReservasi_001
             textBoxIDLokasi.Clear();
 
             textBoxJumlah.Enabled = true;
-            btUpdate.Enabled = false;
-            btHapus.Enabled = false;
+            textBoxIDLokasi.Enabled = true;
+
+            btSimpan.Enabled = true;
+            btUpdate.Enabled = true;
+            btHapus.Enabled = true;
 
             textBoxID.Enabled = true;
         }
